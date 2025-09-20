@@ -1,0 +1,9 @@
+[phases.setup]
+nixPkgs = ["python39", "libGL", "libGLU"]
+
+[phases.install]
+# pip otomatik çalışır; istersen şunu ekleyebilirsin:
+# cmd = "pip install --no-cache-dir -r requirements.txt"
+
+[start]
+cmd = "uvicorn app.main:app --host 0.0.0.0 --port ${PORT}"
